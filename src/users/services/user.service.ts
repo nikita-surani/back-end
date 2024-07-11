@@ -10,6 +10,7 @@ import { BlogsError } from '../../utils/errors';
 import { v4 as uuid } from 'uuid';
 import * as bcrypt from 'bcrypt';
 import { ErrorCreatingItem, ErrorDuplicateItem } from '../../core/error-codes';
+import { UserErrorCodes, UserResourceNames } from '../error-codes';
 
 @Injectable()
 export class UsersService {
@@ -37,7 +38,11 @@ export class UsersService {
       );
 
       if (existingUser) {
-        return new ErrorDuplicateItem('users', 'CreateUser', '');
+        return new ErrorDuplicateItem(
+          UserResourceNames.UserNameSingular,
+          UserErrorCodes.ErrUserAlreadyExist,
+         `Email: ${model.emailAddress}`,
+        );
       }
 
       const salt = await bcrypt.genSalt();
