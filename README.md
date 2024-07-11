@@ -25,6 +25,7 @@ JWT_ACCESS_TOKEN_TTL=3600
 ```
 
 2. Clone this repository to your local machine:
+- branch: master
 
 ```bash
 git clone https://github.com/nikita-surani/back-end.git
