@@ -65,5 +65,18 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Test
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
 ## Notes
 This application includes CRUD operations for blog posts, user authentication, pagination, search term and the ability for users to comment on posts. Ensure you have Node.js and npm installed on your machine before getting started.
